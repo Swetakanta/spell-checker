@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spell Checker</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .spell-checker-container {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .output-box {
+            height: 150px;
+            overflow-y: auto;
+            background-color: #e9ecef;
+            cursor: pointer;
+        }
+        .copy-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="spell-checker-container">
+        <h2 class="text-center mb-4">Spell Checker</h2>
+        <div class="form-group">
+            <label for="inputText">Enter Text</label>
+            <textarea class="form-control" id="inputText" rows="5" placeholder="Type your text here..."></textarea>
+        </div>
+        <button class="btn btn-primary btn-block" onclick="checkSpelling()">Check Typos/Spelling</button>
+        <div class="form-group mt-4">
+            <label for="outputText">Corrected Text</label>
+            <div class="form-control output-box" id="outputText"></div>
+            <div class="copy-button">
+                <button class="btn btn-secondary mt-2" onclick="copyToClipboard()">Copy Corrected Text</button>
+            </div>
+        </div>
+        <div class="alert alert-success mt-3" id="copyAlert" role="alert" style="display: none;">
+            Corrected text copied to clipboard!
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
